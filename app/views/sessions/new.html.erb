@@ -1,2 +1,14 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>LOGIN</h1>
+<p>Please Fill in all fields</p>
+<div class="login">
+	<div class="container">
+		<div class="form">
+      <h1>Log in</h1>
+			<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.text_field :username, :placeholder => "Username" %>
+  <%= f.password_field :password, :placeholder => "Password" %>
+  <%= f.submit "Log in", class: "btn-submit" %>
+<% end %>
+    </div>
+	</div>
+</div>

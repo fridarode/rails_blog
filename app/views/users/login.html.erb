@@ -1,0 +1,10 @@
+<h1>Log In</h1>
+<p>Enter Username and password</p>
+<%=form_for :login, url: sessions_create do  |l|%>
+  <p>
+    <%=l.string :username%><br>
+    <%=l.string :password%><br>
+    <%=l.submit({:class => "btn btn-primary"})%>
+
+  </p>
+<%end%>

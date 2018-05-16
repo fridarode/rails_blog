@@ -1,2 +1,22 @@
-<h1>Posts#show</h1>
+<h1><%= @post.user.fname %>'s Post</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
+<h1>Posts show page</h1>
+<div class="posts">
+  <p><%=@post.title%></p>
+  <p><%=@post.content%></p>
+</div>
+
+<div>
+  <% @post.comments.each do |comment| %>
+    <div>
+      <%= comment.user.fname %>:
+      <%= comment.comment %>
+    </div>
+  <% end %>
+</div>
+
+<%= form_for Comment.new do |f| %>
+  <%= hidden_field_tag "[comment]post_id", @post.id %>
+  <%= f.text_field :comment %>
+  <%= f.submit "Submit comment" %>
+<% end %>

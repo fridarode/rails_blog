@@ -1,2 +1,8 @@
-<h1>Users#show</h1>
+<h1>Hello <%=@user.username%></h1>
 <p>Find me in app/views/users/show.html.erb</p>
+<%=@users.each do |user|%>
+<p>
+  <%=user.fname%>
+</p>
+<%end%>
+<%=link_to "Make a Post", new_post_path%>

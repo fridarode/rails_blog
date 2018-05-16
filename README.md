@@ -35,6 +35,7 @@ get 'users/update'
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+https://www.youtube.com/watch?v=pPy0GQJLZUM&t=2283s
 Rails Blog
 Goal:
 

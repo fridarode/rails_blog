@@ -1,8 +1,10 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
-#form for user to create new blog post
-<%=form_for @post, url:{action: "create"}, html:{class:"newform"} do |f| %>
-<%=f.text_field:title%>
-<%=f.text_area:content%>
-<%=f.submit "Create"%>
+<h1>Add Post</h1>
+<p>form for user to create new blog post</p>
+
+<%=form_for :post, url:{action: "create"}, html:{class:"newform"} do |f| %>
+<p>
+<%=f.text_field :title%><br>
+<%=f.text_area :content%><br>
+<%=f.submit({:class => "btn btn-primary"})%>
+</p>
 <%end%>

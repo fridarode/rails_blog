@@ -1,2 +1,22 @@
-<h1>Users#edit</h1>
+<h1>Edit Info</h1>
 <p>Find me in app/views/users/edit.html.erb</p>
+#form for user to create new user
+<%form_for @user, url:{action: "update"}, html:{class:"newform"} do |f| %>
+<p>
+  <%=f.label :first_name%><br>
+  <%=f.text_field :fname%>
+</p>
+<p>
+  <%=f.label :last_name%><br>
+  <%=f.text_field :lname%>
+</p>
+<p>
+  <%=f.label :username%><br>
+  <%=f.text_field :username%>
+</p>
+<p>
+<%=f.label :password%><br>
+<%=f.text_field :password%><br>
+<%=f.submit ({:class => "btn btn-secondary"})%>
+</p>
+<%end%>
