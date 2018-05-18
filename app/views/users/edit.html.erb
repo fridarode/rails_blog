@@ -1,7 +1,5 @@
 <h1>Edit Info</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
-#form for user to create new user
-<%form_for @user, url:{action: "update"}, html:{class:"newform"} do |f| %>
+<%=form_for @user, method: :put do |f| %>
 <p>
   <%=f.label :first_name%><br>
   <%=f.text_field :fname%>
@@ -17,6 +15,6 @@
 <p>
 <%=f.label :password%><br>
 <%=f.text_field :password%><br>
-<%=f.submit ({:class => "btn btn-secondary"})%>
+<%=f.submit 'Submit', {:class => "btn btn-secondary"}%>
 </p>
 <%end%>

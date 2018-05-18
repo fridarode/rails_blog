@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         puts 'LOGIN SUCCESSFUL'
         session[:user_id] = @user.id
         log_in(@user)
-        redirect_to user_path @user
+        redirect_to user_path(@user)
     else
         puts 'LOGIN FAILED'
         redirect_to login_path
@@ -20,6 +20,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
- redirect_to 'user#index'
+ redirect_to root_path
   end
 end

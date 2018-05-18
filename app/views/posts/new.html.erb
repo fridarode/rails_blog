@@ -3,8 +3,8 @@
 
 <%=form_for :post, url:{action: "create"}, html:{class:"newform"} do |f| %>
 <p>
-<%=f.text_field :title%><br>
-<%=f.text_area :content%><br>
+<%=f.text_field :title, placeholder: 'Title'%><br>
+<%=f.text_area :content, placeholder: 'Content'%><br>
 <%=f.submit({:class => "btn btn-primary"})%>
 </p>
 <%end%>

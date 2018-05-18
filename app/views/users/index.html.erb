@@ -1,4 +1,6 @@
-<h1>Frida's Blog</h1>
-<p>Sign In or Sign Up</p>
-<%=link_to "Sign Up!", new_user_path%>
-<%=link_to "Log-in", 'login'%>
+<h1>All Users</h1>
+<%@users.each do |user|%>
+<p>
+  <%=link_to user.fname, user_path(user)%>
+</p>
+<%end%>

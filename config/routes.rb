@@ -12,5 +12,5 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about'
 
-  root 'users#index'
+  root 'sessions#home'
 end

@@ -1,8 +1,9 @@
-#form for user to edit blog post
-<%form_for @post, url:{action: "edit"}, html:{class:"newform"} do |f| %>
+<h1>Edit Post</h1>
+<%= form_for @post, method: :put do |f| %>
 <p>
-<%=f.text_field (:title, {:class => "form-control"})%><br>
-<%=f.text_area (:content, {:class => "form-control"})%><br>
-<%=f.submit "Create"%>
+<%=f.text_field :title, value: @post.title, class: "form-control"%><br>
+<%=f.text_area :content, value: @post.content, class: "form-control"%><br>
+
+<%=f.submit "Submit"%>
 </p>
 <%end%>

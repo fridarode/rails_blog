@@ -1,8 +1,7 @@
-<h1>hi</h1>
-<h1><%=current_user.fname%>'s Post's</h1>
+<h1>All Posts</h1>
 
 <div class="posts">
-  <%=@posts.each do |post| %>
+  <%@posts.each do |post| %>
   <p><%= link_to post.title, post_path(post) %></p>
   <p><%=post.content%></p>
   <%end%>

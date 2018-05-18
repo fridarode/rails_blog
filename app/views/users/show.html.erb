@@ -1,8 +1,15 @@
-<h1>Hello <%=@user.username%></h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<%=@users.each do |user|%>
-<p>
-  <%=user.fname%>
-</p>
-<%end%>
-<%=link_to "Make a Post", new_post_path%>
+<h1><%=@user.username%>'s Profile</h1>
+
+<% if current_user.id == @user.id %>
+  <div>
+    <%= link_to 'Edit Profile', edit_user_path(@user) %>
+    <%= link_to 'Delete Account', user_path(@user), method: :delete %>
+  </div>
+<% end %>
+
+<% @user.posts.each do |post| %>
+  <div>
+    <%= link_to post.title, post_path(post) %>
+    <%= post.content %>
+  </div>
+<% end %>
