@@ -14,17 +14,17 @@
   <header>
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 text-right text-danger">
+        <div class="col-sm-12 text-right" style="font-size: 30px;">
 
-          <nav class-"bg-primary">
+          <nav class-"bg-dark">
             <% if current_user %>
-            <%= link_to 'Profile', user_path(current_user) %>
-            <%= link_to 'Users', users_path %>
-            <%= link_to 'Posts', posts_path %>
-            <%=link_to "Make a Post", new_post_path%>
-            <%= link_to 'Sign Out', logout_path, method: :delete %>
+            <button class="bg-white" type="button" name="button"><%= link_to 'Profile', user_path(current_user) %></button>
+            <button class="bg-warning" type="button" name="button"><%= link_to 'Users', users_path %></button>
+            <button class="bg-info" type="button" name="button"><%= link_to 'Posts', posts_path %></button>
+          <button class="bg-success" type="button" name="button"><%=link_to "Make a Post", new_post_path%></button>
+          <button class="bg-danger" type="button" name="button"><%= link_to 'Sign Out', logout_path, method: :delete %></button>
             <% else %>
-              <%= link_to 'Log In', login_path %>
+            <button class="bg-light" type="button" name="button"><%= link_to 'Log In', login_path %></button>  
             <% end %>
           </nav>
 
