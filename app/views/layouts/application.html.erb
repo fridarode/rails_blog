@@ -10,21 +10,28 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-    <nav>
-      <% if current_user %>
-      <%= link_to 'Profile', user_path(current_user) %>
-      <%= link_to 'Users', users_path %>
-      <%= link_to 'Posts', posts_path %>
-      <%=link_to "Make a Post", new_post_path%>
-      <%= link_to 'Sign Out', logout_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Log In', login_path %>
-      <% end %>
-    </nav>
+  <body class="bg-success">
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-right text-danger">
 
-  </div>
-</nav>
+          <nav class-"bg-primary">
+            <% if current_user %>
+            <%= link_to 'Profile', user_path(current_user) %>
+            <%= link_to 'Users', users_path %>
+            <%= link_to 'Posts', posts_path %>
+            <%=link_to "Make a Post", new_post_path%>
+            <%= link_to 'Sign Out', logout_path, method: :delete %>
+            <% else %>
+              <%= link_to 'Log In', login_path %>
+            <% end %>
+          </nav>
+
+        </div>
+      </div>
+    </div>
+  </header>
     <%= yield %>
   </body>
 </html>
